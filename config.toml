@@ -36,8 +36,8 @@ blogdir = "blog"
 
 [params]
     description = "I am a PhD student in political science at the University of Iowa." 
-    subtitle = "I study primarily nonstate violence, and political violence. I am primarily interested in violence and democracy."
-    home_text = "A paragraph or so of professional bio.  Write it in the config.toml file---it's called home_text---as one long string."
+    subtitle = "I study primarily political violence, especially by nonstate actors, and political methodolgy. I am primarily interested in violence and democracy. My PhD will be completed in 2021."
+    home_text = "I study how terrorism comes about at the subnational level. My dissertation looks at local elections, such as state or provincial elections, and how support in those settings corresponds with the occurence of terrorism. Because terrorism is a pimrarily local event, especially in the case of domestic terrorism, I argue that it can be explained better by looking at subnational indicators. Groups that have greater organizational capacity, and thus greater electoral success at subnational levels of government are more likely to use legal avenues of political expression. Groups that do not obtain electoral success have less organizational capacity and societal support and are therefore more likely to use illegal forms of political expression such as terrorism."
 
     author = "Christopher Junk"
     dateFormat = "2006/01/02"
