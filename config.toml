@@ -17,14 +17,18 @@ blogdir = "blog"
     name = "Home"
     url = "/"
     weight = 1
-[[menu.main]]           # comment out this row, plus the name, url, and weight to omit  
-   name = "Research"    
-   url = "/research/"
-   weight = 2
-[[menu.main]]           # comment out this row, plus the name, url, and weight to omit 
-   name = "Teaching"
-   url = "/teaching/"
-   weight = 3
+#[[menu.main]]           # comment out this row, plus the name, url, and weight to omit  
+  # name = "Research"    
+  # url = "/research/"
+  # weight = 2
+#[[menu.main]]           # comment out this row, plus the name, url, and weight to omit 
+  # name = "Teaching"
+  # url = "/teaching/"
+  # weight = 3
+[[menu.main]]
+  name = "Dissertation"
+  url = "/dissertation"
+  weight = 2
 [[menu.main]]           # comment out this row, plus the name, url, and weight to omit 
     name = "Blog"
     url = "/blog/"
@@ -36,14 +40,25 @@ blogdir = "blog"
 
 [params]
     description = "I am a PhD student in political science at the University of Iowa." 
-    subtitle = "I study primarily political violence, especially by nonstate actors, and political methodolgy. I am primarily interested in violence and democracy. My PhD will be completed in 2021."
-    home_text = "I study how terrorism comes about at the subnational level. My dissertation looks at local elections, such as state or provincial elections, and how support in those settings corresponds with the occurence of terrorism. Because terrorism is a pimrarily local event, especially in the case of domestic terrorism, I argue that it can be explained better by looking at subnational indicators. Groups that have greater organizational capacity, and thus greater electoral success at subnational levels of government are more likely to use legal avenues of political expression. Groups that do not obtain electoral success have less organizational capacity and societal support and are therefore more likely to use illegal forms of political expression such as terrorism."
+    subtitle = "University of Iowa PhD student in Political Science. Specializing in non-state actor violence at the subnational level political methodology."
+    home_text = """I study how terrorism comes about at the subnational level. My dissertation looks at local 
+    elections, such as state or provincial elections, and how support in those settings corresponds with the 
+    occurence of terrorism. Because terrorism is a primarily local event, especially in the case of domestic 
+    terrorism, I argue that it can be explained better by looking at subnational indicators. Groups that have 
+    greater organizational capacity, and thus greater electoral success at subnational levels of government are 
+    more likely to use legal avenues of political expression. Groups that do not obtain electoral success have 
+    less organizational capacity and societal support and are therefore more likely to use illegal forms of 
+    political expression such as terrorism.
+    
+    \nMy Methodological interests include time series analysis, networks analysis, and multilevel modeling. My 
+    knowledge of statistical software used in data analysis and visualization is best in STATA and R, with increasing
+    knowledge in python."""
 
     author = "Christopher Junk"
     dateFormat = "2006/01/02"
     email = "christopher-hollis@uiowa.edu"
     github_username = "junkpolisci"
-    twitter_username = "junkpolisci"  # leave empty quotes to omit
+    twitter_username = "@Junk_polisci"  # leave empty quotes to omit
     gscholar_code = "your_gscholar_code"        # leave empty quotes to omit    
 
     page_color = "white"
