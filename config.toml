@@ -40,7 +40,7 @@ blogdir = "blog"
 
 [params]
     description = "I am a PhD student in political science at the University of Iowa." 
-    subtitle = "University of Iowa PhD student in Political Science. Specializing in non-state actor violence at the subnational level political methodology."
+    subtitle = "University of Iowa PhD student in Political Science. Specializing in non-state actor violence at the subnational level and political methodology."
     home_text = """I study how terrorism comes about at the subnational level. My dissertation looks at local 
     elections, such as state or provincial elections, and how support in those settings corresponds with the 
     occurence of terrorism. Because terrorism is a primarily local event, especially in the case of domestic 
