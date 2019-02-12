@@ -1,4 +1,4 @@
-baseurl = "http://example.netlify.io/"
+baseurl = "example.netlify.io/"
 relativeurls = false
 languageCode = "en-us"
 title = "Christopher Junk "
