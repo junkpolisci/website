@@ -205,7 +205,7 @@ $(document).ready(function () {
 </div>
 <div id="step-2-check-your-bibtex-keys" class="section level1">
 <h1>Step 2: Check your BibTeX keys</h1>
-<p>In Zotero you can change the BibTeX key if you wish by following this path in Zotero: Tools&gt;Add-Ons and clicking on the “Options” button next to “Better BibTex for Zotero.” Then, edit the citation key format to whatever your preference is. Mine is: [auth:lower][year]. If you change the BibTeX key here you will need to refresh the BibTeX key: right-click a source <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, go to “Better BibTeX”, and click “Refresh BibTeX Key”. You can select your entire library and do this at once, but I have not discovered a way in the menu to auto-update all of them after changing the format of the BibTeX key.</p>
+<p>In Zotero you can change the BibTeX key if you wish by following this path in Zotero: Tools&gt;Add-Ons and clicking on the “Options” button next to “Better BibTex for Zotero.” Then, edit the citation key format to whatever your preference is. Mine is: [auth:lower][year]. If you change the BibTeX key here you will need to refresh the BibTeX key: right-click a source, go to “Better BibTeX”, and click “Refresh BibTeX Key”. You can select your entire library and do this at once, but I have not discovered a way in the menu to auto-update all of them after changing the format of the BibTeX key.</p>
 </div>
 <div id="step-3-export-your-.bib-file-from-zotero-to-your-directory-in-r" class="section level1">
 <h1>Step 3: Export your .bib file from Zotero to your directory in R</h1>
@@ -213,7 +213,7 @@ $(document).ready(function () {
 </div>
 <div id="step-4-set-up-a-template-that-will-use-bibtex-keys-for-citation-and-format-the-header" class="section level1">
 <h1>Step 4: Set up a template that will use BibTeX keys for citation and format the header</h1>
-<p>Now that your .bib file is in your directory you need to have your rmarkdown document setup to cite. This is very simple. Your directory needs to include a .tex template that recognizes the “natbib” citation package. I use <a href="https://github.com/cmcr-class/example_article.git">Fred Solt’s adaptation</a><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> of <a href="http://svmiller.com/blog/2016/02/svm-r-markdown-manuscript/">Steven V. Miller’s</a> template. I’m sure it will work on other templates, but your mileage may vary as I have only confirmed it works under these settings. But, this template works for pretty much all academic writing, so it should be versatile. The template must be in the directory you are working in, as the header bellow relies on it.</p>
+<p>Now that your .bib file is in your directory you need to have your rmarkdown document setup to cite. This is very simple. Your directory needs to include a .tex template that recognizes the “natbib” citation package. I use <a href="https://github.com/cmcr-class/example_article.git">Fred Solt’s adaptation</a><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> of <a href="http://svmiller.com/blog/2016/02/svm-r-markdown-manuscript/">Steven V. Miller’s</a> template. I’m sure it will work on other templates, but your mileage may vary as I have only confirmed it works under these settings. But, this template works for pretty much all academic writing, so it should be versatile. The template must be in the directory you are working in, as the header bellow relies on it.</p>
 <p>Lastly, the header of your .Rmd file needs to look like this:</p>
 <pre class="r"><code>---
 title: &quot;Test Citation&quot;
@@ -225,7 +225,7 @@ output:
     template: svm-latex-ms2.tex 
 bibliography: \dummy{`r file.path(getwd(), list.files(getwd(), &quot;bib$&quot;))`}
 ---</code></pre>
-<p>Once all of this is done you are ready to cite. You can see the minimal requirements for setup needed for this to work on my <a href="https://github.com/junkpolisci">GitHub page</a> which is in my Website repository titled <a href="https://github.com/junkpolisci/website/tree/master/content/blog">“Test_Citation.Rmd”</a>.</p>
+<p>Once all of this is done you are ready to cite. You can see the minimal requirements for setup needed for this to work on my <a href="https://github.com/junkpolisci">GitHub page</a> which is in my Website repository titled <a href="https://github.com/junkpolisci/website/tree/master/working_content">“Test_Citation.Rmd”</a>.</p>
 </div>
 <div id="bonus-section-why-zotero-is-wonderful" class="section level1">
 <h1>Bonus Section: Why Zotero is wonderful</h1>
@@ -235,8 +235,7 @@ bibliography: \dummy{`r file.path(getwd(), list.files(getwd(), &quot;bib$&quot;)
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Sorry, Mac users.<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>The .tex template is in the “Paper” folder and is called “svm-latex-ms2.tex”<a href="#fnref2">↩</a></p></li>
+<li id="fn1"><p>The .tex template is in the “Paper” folder and is called “svm-latex-ms2.tex”<a href="#fnref1">↩</a></p></li>
 </ol>
 </div>
 
