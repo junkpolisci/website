@@ -22,7 +22,7 @@ There are plenty of options for citation management, and everybody has their own
 
 #Step 2: Check your BibTeX keys  
 
-In Zotero you can change the BibTeX key if you wish by following this path in Zotero: Tools>Add-Ons and clicking on the "Options" button next to "Better BibTex for Zotero." Then, edit the citation key format to whatever your preference is. Mine is: [auth:lower][year]. If you change the BibTeX key here you will need to refresh the BibTeX key: right-click a source ^[Sorry, Mac users.], go to "Better BibTeX", and click "Refresh BibTeX Key". You can select your entire library and do this at once, but I have not discovered a way in the menu to auto-update all of them after changing the format of the BibTeX key.  
+In Zotero you can change the BibTeX key if you wish by following this path in Zotero: Tools>Add-Ons and clicking on the "Options" button next to "Better BibTex for Zotero." Then, edit the citation key format to whatever your preference is. Mine is: [auth:lower][year]. If you change the BibTeX key here you will need to refresh the BibTeX key: right-click a source, go to "Better BibTeX", and click "Refresh BibTeX Key". You can select your entire library and do this at once, but I have not discovered a way in the menu to auto-update all of them after changing the format of the BibTeX key.  
 
 #Step 3: Export your .bib file from Zotero to your directory in R  
 
