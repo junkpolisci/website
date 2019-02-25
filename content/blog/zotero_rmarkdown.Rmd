@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Integrate Zotero Ciations with R Markdown"
 author: "Christopher Junk"
 date: "February 24, 2019"
 output: html_document
@@ -42,3 +42,10 @@ output:
 bibliography: \dummy{`r file.path(getwd(), list.files(getwd(), "bib$"))`}
 ---
 ```
+
+Once all of this is done you are ready to cite. You can see the minimal function version on my [GitHub page](https://github.com/junkpolisci) which is in my Website repository titled ["Test_Citation.Rmd"](https://github.com/junkpolisci/website/tree/master/content/blog).
+
+#Bonus Section: Why Zotero is wonderful
+Zotero has one major advantage that for Windows users I have found to be unmatched among other software for managing citations. That is the [Chrome extension](https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc?hl=en) that directly extracts all information and the document itself from journal's websites into Zotero with correct citation information. Simply add the extension to Chrome and click it when you are on an article/webpage you want to cite and it imports the citation and the document/URL automatically. This saves a couple of clicks for each citation you aquire, which when studying for qualifying exams can feel like a life saver. 
+
+Also, the Better BibTeX extension allows you to drag and drop a citation from the Zotero window into your Rmarkdown document. This seems wildly inefficient to me, and you still have to make sure your .bib file is in your directory for it to work. But, it is still a neat perk if you just cannot seem to type the BibTeX key correctly. 
