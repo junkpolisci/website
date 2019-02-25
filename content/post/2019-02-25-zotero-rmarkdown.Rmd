@@ -46,7 +46,7 @@ bibliography: \dummy{`r file.path(getwd(), list.files(getwd(), "bib$"))`}
 ---
 ```
 
-Once all of this is done you are ready to cite. You can see the minimal function version on my [GitHub page](https://github.com/junkpolisci) which is in my Website repository titled ["Test_Citation.Rmd"](https://github.com/junkpolisci/website/tree/master/content/blog).
+Once all of this is done you are ready to cite. You can see the minimal requirements for setup needed for this to work on my [GitHub page](https://github.com/junkpolisci) which is in my Website repository titled ["Test_Citation.Rmd"](https://github.com/junkpolisci/website/tree/master/content/blog).
 
 #Bonus Section: Why Zotero is wonderful
 Zotero has one major advantage that for Windows users I have found to be unmatched among other software for managing citations. That is the [Chrome extension](https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc?hl=en) that directly extracts all information and the document itself from journal's websites into Zotero with correct citation information. Simply add the extension to Chrome and click it when you are on an article/webpage you want to cite and it imports the citation and the document/URL automatically. This saves a couple of clicks for each citation you aquire, which when studying for qualifying exams can feel like a life saver. 
