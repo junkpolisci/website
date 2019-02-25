@@ -1,0 +1,16 @@
+---
+title: "Test Citation"
+author: "Christopher Junk"
+date: "February 24, 2019"
+output: 
+  pdf_document:
+    citation_package: natbib
+    template: svm-latex-ms2.tex 
+bibliography: \dummy{`r file.path(getwd(), list.files(getwd(), "bib$"))`}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+@bapat2016
