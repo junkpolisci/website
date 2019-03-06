@@ -3,7 +3,7 @@ relativeurls = false
 languageCode = "en-us"
 title = "Christopher Junk "
 theme = "hugo-prof"
-googleAnalytics = ""
+googleAnalytics = "UA-135658780-1"
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 uglyURLS = false
@@ -40,26 +40,24 @@ blogdir = "blog"
 
 [params]
     description = "I am a PhD student in political science at the University of Iowa." 
-    subtitle = "PhD candidate. Data science and analysis. Non-state actor violence. Methodolgy."
-    home_text = """I study how terrorism comes about at the subnational level. My dissertation looks at local 
-    elections, such as state or provincial elections, and how support in those settings corresponds with the 
-    occurence of terrorism. Because terrorism is a primarily local event, especially in the case of domestic 
-    terrorism, I argue that it can be explained better by looking at subnational indicators. Groups that have 
-    greater organizational capacity, and thus greater electoral success at subnational levels of government are 
-    more likely to use legal avenues of political expression. Groups that do not obtain electoral success have 
-    less organizational capacity and societal support and are therefore more likely to use illegal forms of 
-    political expression such as terrorism.
+    subtitle = "PhD candidate. Data science and analysis. Non-state actor violence. Machine learning, applied statistics."
+    home_text = """I study the dynamic relationship between terrorism, insurgency, and state use of power. More specifically,
+    I have research projects that focus on (1) when democracies resort to repression as a response to violent and 
+    nonviolent dissent, (2) how the incidence and lethality of terrorism affects support for the central 
+    government in Spain, and (3) my dissertation implements machine learning strategies to predict the occurence,
+    lethality, and locaiton of terrorism.
     
-    \nMy Methodological interests include time series analysis, networks analysis, and multilevel modeling. My 
-    knowledge of statistical software used in data analysis and visualization is best in STATA and R, with increasing
-    knowledge in python."""
+    \nMy Methodological interests include time series analysis, networks analysis, multilevel modeling, 
+    survival analysis, and machine learning. My proficiency in statistical software is strongest in R and Stata, 
+    but improving in Python.
+    """
 
     author = "Christopher Junk"
     dateFormat = "2006/01/02"
     email = "christopher-hollis@uiowa.edu"
     github_username = "junkpolisci"
     twitter_username = "@Junk_polisci"  # leave empty quotes to omit
-    gscholar_code = "your_gscholar_code"        # leave empty quotes to omit    
+    gscholar_code = ""        # leave empty quotes to omit    
 
     page_color = "white"
     text_color = "black"
