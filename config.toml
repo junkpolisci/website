@@ -60,7 +60,6 @@ blogdir = "blog"
     github_username = "junkpolisci"
     twitter_username = "@Junk_polisci"  # leave empty quotes to omit
     #gscholar_code = ""        # leave empty quotes to omit    
-    university = "https://clas.uiowa.edu/polisci/people/christopher-junk"
 
     page_color = "white"
     text_color = "black"
