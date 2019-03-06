@@ -1,7 +1,7 @@
 baseurl = "https://christopherjunk.netlify.com/"
 relativeurls = false
 languageCode = "en-us"
-title = "Christopher Junk "
+title = "Christopher Junk"
 theme = "hugo-prof"
 googleAnalytics = "UA-135658780-1"
 disqusShortname = ""
@@ -50,6 +50,8 @@ blogdir = "blog"
     \nMy Methodological interests include time series analysis, networks analysis, multilevel modeling, 
     survival analysis, and machine learning. My proficiency in statistical software is strongest in R and Stata, 
     but improving in Python.
+    
+    \nYou can see my [University of Iowa webpage here](https://clas.uiowa.edu/polisci/people/christopher-junk). 
     """
 
     author = "Christopher Junk"
@@ -57,7 +59,8 @@ blogdir = "blog"
     email = "christopher-hollis@uiowa.edu"
     github_username = "junkpolisci"
     twitter_username = "@Junk_polisci"  # leave empty quotes to omit
-    gscholar_code = ""        # leave empty quotes to omit    
+    #gscholar_code = ""        # leave empty quotes to omit    
+    university = "https://clas.uiowa.edu/polisci/people/christopher-junk"
 
     page_color = "white"
     text_color = "black"
