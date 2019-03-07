@@ -44,8 +44,8 @@ blogdir = "blog"
     home_text = """I study the dynamic relationship between terrorism, insurgency, and state use of power. More specifically,
     I have research projects that focus on (1) when democracies resort to repression as a response to violent and 
     nonviolent dissent, (2) how the incidence and lethality of terrorism affects support for the central 
-    government in Spain, and (3) my dissertation implements machine learning strategies to predict the occurence,
-    lethality, and locaiton of terrorism.
+    government in Spain, and (3) my dissertation implements machine learning strategies to predict the occurrence,
+    lethality, and location of terrorism.
     
     \nMy Methodological interests include time series analysis, networks analysis, multilevel modeling, 
     survival analysis, and machine learning. My proficiency in statistical software is strongest in R and Stata, 
