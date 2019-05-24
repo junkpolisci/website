@@ -747,7 +747,7 @@ unigram_nrc_breakdown %>%
 
 The plot below shows the distribution of these sentiments between the top users. Overall, these distributions almost all represent exactly the plot above in relative frequency. Positivity, negativity, trust, and fear are the top sentiments among each user, but some users are more emotive than others. This is likely because these are the top posters, such as KB Mansfield, Germania Magna, and kayden. 
 
-```{r Sentiment Analysis Top 10 Users NRC, echo= F, cache=T, warning=F, message=F, fig.height=10}
+```{r Sentiment Analysis Top 10 Users NRC, echo= F, cache=T, warning=F, message=F, fig.height=10, fig.align='center'}
 unigram_nrc_user %>% 
   group_by(user, sentiment) %>% 
   summarise(rank = mean(rank),
@@ -956,7 +956,7 @@ unigram_afinn %>%
 In sum, the simple sentiment analysis above shows that the posts are much more negative than they are positive. This is not a suprising finding. White supremacists are almost exclusively revisionist individuals, who hold the ideas that whites do not have enough power, and are angry about that. A forum which allows white supremacists to congregate is unsuprisingly very negative in tone. 
 
 # Latent Dirichlet Allocation
-```{r LDA setup, cache=T, warning=F, messages=F, echo=F}
+```{r LDA setup, cache=T, warning=F, messages=F, echo=F, include=F}
 library(topicmodels)
 unigram_dtm <- unigram %>% 
                group_by(id) %>% 
@@ -1073,7 +1073,7 @@ Topic three seems to have a more general discussion of economic and political sy
 
 Topic four is quite difficult to discern a topic. The only two themes that are represented by multiple words are Jewish people, and Hitler's 3rd Reich War. Topic five similarly has themes focused on a discussion of the history of Nazi Germany and the violence against Jews. 
 
-```{r Unigram LDA 5 A, cache=T, echo=F, warning=F, message=F, fig.width=15, fig.height=20}
+```{r Unigram LDA 5 A, cache=T, echo=F, warning=F, message=F, fig.height=10, fig.align='center'}
 u_lda5_topics <- tidy(unigram_lda5,
                       matrix = "beta") %>% 
                  group_by(topic) %>% 
@@ -1096,11 +1096,11 @@ u_lda5_topics %>%
        y = "Beta",
        x = "Unigram",
        caption = "k = 5") + 
-  theme(axis.title = element_text(size = 15),
-        title = element_text(size = 18),
+  theme(axis.title = element_text(size = 12),
+        title = element_text(size = 15),
         plot.title = element_text(hjust = .5),
-        axis.text = element_text(size = 12),
-        strip.text = element_text(size = 15))
+        axis.text = element_text(size = 8),
+        strip.text = element_text(size = 12))
 
 
 ```
@@ -1113,7 +1113,7 @@ Nonetheless, some patterns do exist here. Notably, topic four is distinguished a
 
 My inference about topic three does not seem to be directly supported here, but neither is it refuted. It seems to have some distinct philosophical components. Topic two and topic one, nonetheless, are not illuminated here. 
 
-```{r Unigram LDA 5 B Setup, cache=T, echo=F, warning=F, message=F, fig.width=20, fig.height=30}
+```{r Unigram LDA 5 B Setup, cache=T, echo=F, warning=F, message=F}
 u_lda5_comparison <- u_lda5_topics %>% 
   mutate(topic = paste0("topic", topic)) %>% 
   spread(topic, beta) %>% 
@@ -1284,7 +1284,7 @@ u_lda5_comptops <- rbind(u_lda5_comp21_bot,
   
 ```
 
-```{r Unigram LDA 5 B, cache=T, echo=F, warning=F, message=F, fig.width=20, fig.height=40}
+```{r Unigram LDA 5 B, cache=T, echo=F, warning=F, message=F, fig.height=20, fig.align='center'}
 u_lda5_comptops  %>% 
    ggplot(aes(x = term,
              y = beta_comp,
@@ -1298,11 +1298,11 @@ u_lda5_comptops  %>%
        y = "Log2(Beta Larger Topic / Beta Smaller Topic)",
        x = "Unigram",
         caption = "k = 5") + 
-  theme(axis.title = element_text(size = 18),
-        title = element_text(size = 23),
+  theme(axis.title = element_text(size = 12),
+        title = element_text(size = 15),
         plot.title = element_text(hjust = .5),
-        axis.text = element_text(size = 15),
-        strip.text = element_text(size = 18))
+        axis.text = element_text(size = 8),
+        strip.text = element_text(size = 12))
 ```
 
 The plots below show the results of the Bigram LDA analysis. Above I tried two topics and three topics, and I found that two topics showed some difference, but not stronger difference. Five topics showed that it was difficult to discern between groups. As a result, I use a three topic model for bigrams. It is not fair to compare the results here to the results above because there are more bigrams than there are unigrams, and the models are very different because of the difference between one word and two word pairs. I use a three topic model just for exploration using bigrams, and acknowledge that future iterations should test more thoroughly other combinations of topic specifications. 
@@ -1335,7 +1335,8 @@ b_lda3_topics %>%
        x = "Bigram",
        y = "Beta") + 
   theme(axis.title = element_text(size = 12),
-        title = element_text(size = 15),
+        axis.text.y = element_text(angle = 90),
+        title = element_text(size = 14),
         plot.title = element_text(hjust = .5),
         axis.text = element_text(size = 8),
         strip.text = element_text(size = 12))
@@ -1422,11 +1423,11 @@ b_lda3_betacomp_top20s %>%
   labs(title = "Log2 Ratio of Betas - 3 Topic Bigram",
        x = "Bigram",
        y = "Log2(Beta Larger Topic/Beta Smaller Topic)") +
-  theme(axis.title = element_text(size = 15),
-        title = element_text(size = 18),
+  theme(axis.title = element_text(size = 12),
+        title = element_text(size = 15),
         plot.title = element_text(hjust = .5),
-        axis.text = element_text(size = 12),
-        strip.text = element_text(size = 15),
+        axis.text = element_text(size = 8),
+        strip.text = element_text(size = 12),
         axis.text.x = element_text(angle = 90),
         legend.position = 'none')
 
