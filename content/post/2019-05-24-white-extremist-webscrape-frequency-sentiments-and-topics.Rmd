@@ -436,14 +436,14 @@ Looking at the post history of the top 11 users presents an interesting picture 
 
 Kaiserreich, the user who started the forum, was very active originally but did not maintain his activity past the first year. Kayden, the top poster, is pretty consistently active throughout the post with increases in activity periodically but generally showing a smooth trend. Many of the others are very isolated but intense in the frequency of their posts: John Hawkwood and KB Mansfield in particular have a few intense months of posting, but do not post outside of those windows. It seems likely that most of the top posters are top posters not because of their consistent dedication to discussion in the forum, but because of their individual dedication to particular discussion in the forum. Notably, John Hawkwood and Rob Jones peak at the same time at the end of 2008, perhaps the were arguing with each other? 
 
-```{r Top Users Timeline, cache=T, echo=F, warning=F, message=F, fig.height=20, fig.width=15}
+```{r Top Users Timeline, cache=T, echo=F, warning=F, message=F,}
 user_month %>% 
   filter(ym < "2012-01") %>% 
   ggplot(aes(x = as.Date(paste0(ym, "-01")),
              y = n_month,
              group = 11)) +
   geom_line(aes(color = mean_length10),
-            size = 3) +
+            size = 1) +
   scale_x_date(date_breaks = "3 months",
                date_labels = "%Y-%B") +
   scale_color_gradient(low = "gray",
@@ -455,17 +455,17 @@ user_month %>%
        color = "Mean Words per Post / 10") +
   theme_bw() + 
   theme(axis.text.x = element_text(angle = 90,
-                                   size = 10),
-        axis.text.y = element_text(size = 10),
-        axis.title = element_text(size = 15),
-        title = element_text(size = 20), 
+                                   size = 5),
+        axis.text.y = element_text(size = 5),
+        axis.title = element_text(size = 10),
+        title = element_text(size = 15), 
         plot.title = element_text(hjust = .5),
-        legend.text = element_text(size = 8),
-        legend.title = element_text(size = 12),
-        legend.key.size = unit(1, 'lines'),
+        legend.text = element_text(size = 5),
+        legend.title = element_text(size = 5),
+        legend.key.size = unit(.5, 'lines'),
         legend.title.align = .5,
         legend.background = element_rect(fill = NA),
-        strip.text = element_text(size = 10,
+        strip.text = element_text(size = 5,
                                     angle = 90),
         legend.position=c(.80,.78))
 ```
