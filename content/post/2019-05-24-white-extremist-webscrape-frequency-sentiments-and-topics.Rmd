@@ -436,7 +436,7 @@ Looking at the post history of the top 11 users presents an interesting picture 
 
 Kaiserreich, the user who started the forum, was very active originally but did not maintain his activity past the first year. Kayden, the top poster, is pretty consistently active throughout the post with increases in activity periodically but generally showing a smooth trend. Many of the others are very isolated but intense in the frequency of their posts: John Hawkwood and KB Mansfield in particular have a few intense months of posting, but do not post outside of those windows. It seems likely that most of the top posters are top posters not because of their consistent dedication to discussion in the forum, but because of their individual dedication to particular discussion in the forum. Notably, John Hawkwood and Rob Jones peak at the same time at the end of 2008, perhaps the were arguing with each other? 
 
-```{r Top Users Timeline, cache=T, echo=F, warning=F, message=F,}
+```{r Top Users Timeline, cache=T, echo=F, warning=F, message=F, fig.height=10}
 user_month %>% 
   filter(ym < "2012-01") %>% 
   ggplot(aes(x = as.Date(paste0(ym, "-01")),
@@ -446,7 +446,7 @@ user_month %>%
             size = 1) +
   scale_x_date(date_breaks = "3 months",
                date_labels = "%Y-%B") +
-  scale_color_gradient(low = "gray",
+  scale_color_gradient(low = "dark gray",
                        high = "yellow") + 
   facet_grid(user ~ .) +
   labs(title = "Top Posters pre-2012 Activity",
@@ -455,19 +455,19 @@ user_month %>%
        color = "Mean Words per Post / 10") +
   theme_bw() + 
   theme(axis.text.x = element_text(angle = 90,
-                                   size = 5),
-        axis.text.y = element_text(size = 5),
+                                   size = 7.5),
+        axis.text.y = element_text(size = 7.7),
         axis.title = element_text(size = 10),
         title = element_text(size = 15), 
         plot.title = element_text(hjust = .5),
-        legend.text = element_text(size = 5),
-        legend.title = element_text(size = 5),
+        legend.text = element_text(size = 7.5),
+        legend.title = element_text(size = 7.5),
         legend.key.size = unit(.5, 'lines'),
-        legend.title.align = .5,
+        legend.title.align = 1,
         legend.background = element_rect(fill = NA),
-        strip.text = element_text(size = 5,
+        strip.text = element_text(size = 8,
                                     angle = 90),
-        legend.position=c(.80,.78))
+        legend.position= 'bottom')
 ```
 
 Next, I break down the posts into two different formats for analysis: unigrams (one word phrases) and bigrams (two word phrases). This breaks each post into one observation per word-like-object in the post. A post that is originally one row and has 50 words in it becomes 50 rows, one per word (or two-word pair in the case of bigrams). 
@@ -747,7 +747,7 @@ unigram_nrc_breakdown %>%
 
 The plot below shows the distribution of these sentiments between the top users. Overall, these distributions almost all represent exactly the plot above in relative frequency. Positivity, negativity, trust, and fear are the top sentiments among each user, but some users are more emotive than others. This is likely because these are the top posters, such as KB Mansfield, Germania Magna, and kayden. 
 
-```{r Sentiment Analysis Top 10 Users NRC, echo= F, cache=T, warning=F, message=F,  fig.width= 15, fig.height=10}
+```{r Sentiment Analysis Top 10 Users NRC, echo= F, cache=T, warning=F, message=F, fig.height=10}
 unigram_nrc_user %>% 
   group_by(user, sentiment) %>% 
   summarise(rank = mean(rank),
@@ -759,14 +759,14 @@ unigram_nrc_user %>%
   geom_col() + 
   coord_flip() +
   facet_wrap(user ~ .,
-             ncol = 5) + 
+             ncol = 2) + 
   labs(title = "NRC Sentiment Distribution among Top 10 Users", 
        y = "Frequency",
        x = "Sentiment") + 
   theme_bw() + 
-  theme(axis.text = element_text(size = 12),
-        axis.title = element_text(size = 15),
-        title = element_text(size = 20), 
+  theme(axis.text = element_text(size = 10),
+        axis.title = element_text(size = 12),
+        title = element_text(size = 15), 
         plot.title = element_text(hjust = .5),
         strip.text = element_text(size = 12),
         legend.position = "none")
@@ -956,7 +956,7 @@ unigram_afinn %>%
 In sum, the simple sentiment analysis above shows that the posts are much more negative than they are positive. This is not a suprising finding. White supremacists are almost exclusively revisionist individuals, who hold the ideas that whites do not have enough power, and are angry about that. A forum which allows white supremacists to congregate is unsuprisingly very negative in tone. 
 
 # Latent Dirichlet Allocation
-```{r LDA setup, cache=T, warning=F, message=F, echo=F}
+```{r LDA setup, cache=T, warning=F, messages=F, echo=F}
 library(topicmodels)
 unigram_dtm <- unigram %>% 
                group_by(id) %>% 
@@ -981,7 +981,7 @@ Next I estimate several Latent Dirichlet allocation [(LDA)](http://www.jmlr.org/
 
 I vary the models below by changing the parameter, 'k.' This is the number of topics that define the multinomial distribution the LDA model uses while estimating. The larger the k, the more topics the LDA will generate, and thus the more potential nuance uncovered in the discussion. However, in the context of these posts it would be easy to overfit the corpus of text because the posts are all different lengths, some much much longer than others. Smaller posts have less opportunity to discuss any topic than longer posts. In these preliminary analyses I ignore these concerns, but keep them in mind as a secondary step of analysis. I estimate with k values of 2, and 5 with the unigram data, and 2 and 3 with the bigram data.
 
-```{r Unigram LDA, cache=T, warning=F, message=T}
+```{r Unigram LDA, cache=T, warning=F, message=F}
 library(tictoc)
 
 #Two Topic LDA
